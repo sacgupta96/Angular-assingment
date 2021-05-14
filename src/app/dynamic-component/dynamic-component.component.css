@@ -1,0 +1,4 @@
+.click-class:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

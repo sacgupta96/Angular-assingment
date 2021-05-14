@@ -1,0 +1,29 @@
+<form #phonenumberForm="ngForm" class="container mt-5" (ngSubmit)="logValue(phonenumberForm)">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <button type="button" class="btn btn-primary mb-2" (click)="addphoneNumber()">Add Phonenumber</button>
+            <section class="container border mb-4 p-3" *ngFor="let phonenumber of phonenumbers; let i = index;">
+            <div class="row">
+                <div class="col-6">
+                    <h4>Phonenumber {{i + 1}}</h4>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <input type="number" class="form-control" [(ngModel)]="phonenumber"
+                        name="phonenumber{{i+1}}"/>
+                    </div>
+                </div>
+                <div class="col-6 text-right ">
+                    <button type="button" class="btn btn-danger btn-sm" (click)="removePhonenumber(i)" [disabled]="phonenumbers.length ===1">Remove</button>
+                </div>
+            </div>
+            </section>
+            <div class="text-right">
+                <input type="submit" class="btn btn-success" value="Submit"/>
+            </div>
+        </div>
+    </div>
+</form>
